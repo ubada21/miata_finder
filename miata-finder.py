@@ -103,4 +103,3 @@ cars = []
 
 car1 = Car(all_links[0])
 
-print(car1.car_attributes)
