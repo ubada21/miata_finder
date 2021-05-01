@@ -8,7 +8,9 @@ class Car:
         self.link = link
         self.title = 'hello'
         link_info = requests.get(link).text
-        car_soup = BeautifulSoup(link_info, 'html.parser').find_all(class_='attrgroup')
+        car_soup = BeautifulSoup(link_info, 'html.parser').find_all\
+            (class_='attrgroup')
+
         car_title = car_soup[0]
         car_attr = car_soup[1]
         car_attrs = str(car_attr).split('<span>')
