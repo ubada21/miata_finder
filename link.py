@@ -16,19 +16,36 @@ class Car:
         for i in car_attrs:
             car_attributes.append(i.split(':'))
 
-        car_attributes = car_attributes[1:]
+        self.car_attributes = car_attributes[1:]
 
-        for j in car_attributes:
+        for j in self.car_attributes:
+            if len(j) == 1:
+                self.car_attributes.remove(j)
+
+        for j in self.car_attributes:
             j[1] = j[1].split("<b>")[1].split("</b>")[0]
 
 
         self.title = str(car_title).split('<span>')[1].split('<b>')[1].split('</b>')[0]
-        self.attrbt_dict = dict(car_attributes)
+        self.attrbt_dict = dict(self.car_attributes)
 
         self.fuel = self.attrbt_dict['fuel']
         self.odometer = self.attrbt_dict['odometer']
         self.title_status = self.attrbt_dict['title status']
         self.transmission = self.attrbt_dict['transmission']
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

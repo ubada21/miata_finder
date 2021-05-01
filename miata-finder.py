@@ -23,8 +23,8 @@ elif trans == 'manual':
                                   "max_auto_miles=" + max_km +"&" \
                                   "auto_transmission=" + str(trans)"""
 
-craigs_link = 'https://vancouver.craigslist.org/search/cta?query=850i&purveyo' \
-              'r-input=all'
+craigs_link = "https://vancouver.craigslist.org/search/cto?query=silverado&" \
+              "purveyor-input=owner"
 
 page = requests.get(craigs_link).text
 
@@ -41,14 +41,12 @@ for link in links_only:
         all_links.append(link)
 
 all_links = list(dict.fromkeys(all_links))
-print(all_links)
 
 car_list = []
 
 for link in all_links:
     car = Car(link)
     car_list.append(car)
-
 
 for car in car_list:
     print(car.title)
