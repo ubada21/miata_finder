@@ -1,4 +1,4 @@
-from link import Car
+from car import Car
 from bs4 import BeautifulSoup
 import requests
 
@@ -23,7 +23,7 @@ elif trans == 'manual':
                                   "max_auto_miles=" + max_km +"&" \
                                   "auto_transmission=" + str(trans)"""
 
-craigs_link = "https://vancouver.craigslist.org/search/cto?query=silverado&" \
+craigs_link = "https://vancouver.craigslist.org/search/cto?query=miata&" \
               "purveyor-input=owner"
 
 page = requests.get(craigs_link).text
@@ -49,4 +49,10 @@ for link in all_links:
     car_list.append(car)
 
 for car in car_list:
+    print(car.url)
     print(car.title)
+    print(car.fuel)
+    print(car.odometer)
+    print(car.title_status)
+    print(car.transmission)
+    print('\n')
