@@ -47,12 +47,3 @@ car_list = []
 for link in all_links:
     car = Car(link)
     car_list.append(car)
-
-for car in car_list:
-    print(car.url)
-    print(car.title)
-    print(car.fuel)
-    print(car.odometer)
-    print(car.title_status)
-    print(car.transmission)
-    print('\n')
