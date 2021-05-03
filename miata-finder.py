@@ -23,7 +23,7 @@ elif trans == 'manual':
                                   "max_auto_miles=" + max_km +"&" \
                                   "auto_transmission=" + str(trans)"""
 
-craigs_link = "https://vancouver.craigslist.org/search/cto?query=miata&" \
+craigs_link = "https://vancouver.craigslist.org/search/cto?query=c63&" \
               "purveyor-input=owner"
 
 page = requests.get(craigs_link).text
@@ -47,3 +47,18 @@ car_list = []
 for link in all_links:
     car = Car(link)
     car_list.append(car)
+
+
+for car1 in car_list:
+    print(car1.listing)
+    print('date posted: ' + str(car1.date))
+    print('URL: ' + car1.url)
+    print('Make/Model: ' + car1.makemodel)
+    print('Price: ' + str(car1.price))
+    print('Location: ' + car1.location)
+    print('Fuel Type: ' + car1.fuel)
+    print('Odometer: ' + str(car1.odometer) + " Km")
+    print('Title: ' + car1.title_status)
+    print('Transmission: ' + car1.transmission)
+    print('\n')
+
